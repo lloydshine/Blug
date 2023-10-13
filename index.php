@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="modal-container">
@@ -117,16 +117,17 @@
     <section class="main">
       <?php
       foreach ($result as $row) {
-        $options = $row["username"] != $_SESSION["username"] ? "" : "
+        if (isset($_SESSION['username'])) {
+        echo $row["username"] != $_SESSION["username"] ? "" : "
         <div>
           <a id='edit-post' postid='{$row['id']}' title='{$row['title']}' body='{$row['post']}'>Edit</a>
           <a href='deletePost.php?id={$row['id']}'>Delete</a>
         </div>
         ";
+        }
         echo "
         <div class='content'>
           <div class='post'>
-              {$options}
               <p class='info'>By {$row["username"]} {$row["date_posted"]}</p>
             <h3>{$row["title"]}</h3>
             <p class='text'>{$row["post"]}</p>
@@ -136,6 +137,6 @@
       ?>
     </section>
   </main>
-  <script src="script.js?v=2"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
   padding: 0;
   margin: 0;
 }
+
 html {
   font-size: var(--font-size);
   font-family: var(--font-family);
@@ -17,6 +18,54 @@ html {
 
 body {
   display: flex;
+}
+
+.side-nav .nav-logo {
+  margin: 3rem 0;
+}
+
+.side-nav .nav-logo h1 {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+}
+
+.side-nav #logout-button {
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  color: white;
+  cursor: pointer;
+}
+
+.side-nav #create-post {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(5, 117, 245);
+  color: white;
+  border-radius: 10px;
+}
+
+.side-nav .link {
+  color: white;
+  margin: 2rem 0;
+
+
+}
+
+.side-nav .link a {
+  text-decoration: none;
+  color: rgb(5, 117, 245);
+}
+
+.side-nav .welcome {
+  font-size: 1.3rem;
+  color: lightgreen;
+  text-align: center;
 }
 
 .side-nav {
@@ -28,140 +77,104 @@ body {
   align-items: center;
   transition: 0.5s;
   overflow: hidden;
-
-  .nav-logo {
-    margin: 3rem 0;
-    h1 {
-      color: var(--secondary-color);
-      font-size: 2.5rem;
-    }
-  }
-
-  #logout-button {
-    background-color: red;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.4rem;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-    color: white;
-    cursor: pointer;
-  }
-
-  #create-post {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(5, 117, 245);
-    color: white;
-    border-radius: 10px;
-  }
-
-  .link {
-    color: white;
-    margin: 2rem 0;
-    a {
-      text-decoration: none;
-      color: rgb(5, 117, 245);
-    }
-  }
-
-  .welcome {
-    font-size: 1.3rem;
-    color: lightgreen;
-    text-align: center;
-  }
 }
 
-.side-nav .login form, .register form {
+label {
+  align-self: flex-start;
+}
+
+.side-nav .login form input,
+.register form input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 15rem;
+  border-radius: 10px;
+}
+
+.side-nav .login form button,
+.register form button {
+  font-size: 1rem;
+  width: 95%;
+  padding: 0.5rem;
+  background-color: rgb(5, 117, 245);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.login form,
+.register form {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--secondary-color);
+}
 
-  label {
-    align-self: flex-start;
-  }
+main header .header-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 
-  input {
-    font-size: 1rem;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    width: 15rem;
-    border-radius: 10px;
-  }
-
-  button {
-    font-size: 1rem;
-    width: 95%;
-    padding: 0.5rem;
-    background-color: rgb(5, 117, 245);
-    border: none;
+  h1 {
+    padding: 0.5rem 2rem;
+    background-color: var(--main-color);
     color: white;
-    cursor: pointer;
-    border-radius: 10px;
+    border-radius: 15px;
   }
+}
+
+main header button:hover {
+  background-color: grey;
+  color: black;
+}
+
+main header svg {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+}
+
+main header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.40);
 }
 
 main {
   width: 100%;
-
-  header {
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.40);
-
-    .header-container {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      h1 {
-        padding: 0.5rem 2rem;
-        background-color: var(--main-color);
-        color: white;
-        border-radius: 15px;
-      }
-    }
-
-    button:hover {
-      background-color: grey;
-      color: black;
-    }
-
-    svg {
-      cursor: pointer;
-      height: 3rem;
-      width: 3rem;
-    }
-  }
-
-  section {
-    overflow-y: auto;
-    height: 86vh;
-    width: 100%;
-  }
 }
 
+main section {
+  overflow-y: auto;
+  height: 86vh;
+  width: 100%;
+}
 
 .content {
   width: 100%;
 
-  .post {
-    padding: 4rem;
-    h3 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .text {
-      font-size: 1.2rem;
-    }
-    .info {
-      opacity: 0.6;
-    }
-  }
+
+}
+
+.content .post h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.content .post .text {
+  font-size: 1.2rem;
+}
+
+.content .post .info {
+  opacity: 0.6;
+}
+
+.content .post {
+  padding: 4rem;
 }
 
 .log {
@@ -189,6 +202,16 @@ main {
   display: none;
 }
 
+.modal header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
 .modal {
   position: absolute;
   background-color: white;
@@ -196,37 +219,28 @@ main {
   z-index: 3;
   border-radius: 10px;
   display: none;
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+}
 
-    svg {
-      cursor: pointer;
-    }
-  }
+.modal form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
+.modal form button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: #181a1a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-    button {
-      font-size: 1rem;
-      padding: 0.5rem;
-      background-color: #181a1a;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    input,textarea {
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
-  }
+.modal form input,
+textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 @media only screen and (max-width: 800px) {
